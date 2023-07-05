@@ -1,0 +1,21 @@
+n	create or replace function palindrome(n int)
+return int
+is
+rev int:=0;
+m int;
+k int;
+begin
+	m:=n;
+	while(m>0)
+        loop
+	 k:=mod(m,10);
+	 rev:=rev*10+k;
+	 m:=trunc(m/10);
+         end loop;
+       if(rev=n) then
+         return 1;
+       else
+         return 0;
+       end if;
+end;
+/
